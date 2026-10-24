@@ -1,24 +1,21 @@
 public class Motorcycle extends Vehicle {
-    private boolean hasSidecar;
+    private final boolean hasSidecar;
 
-    public Motorcycle(String brand,int year,boolean hasSidecar) {
+    public Motorcycle(String brand, int year, boolean hasSidecar) {
         super(brand, year);
         this.hasSidecar = hasSidecar;
     }
+
     @Override
-    public void startEngine() {
-        System.out.println("Мотоцикл рычит!");
-    }
+    public void startEngine() { System.out.println("Мотоцикл заводится."); }
+
     @Override
-    public void stopEngine() {
-        System.out.println("Мотоцикл остывает");
-    }
+    public void stopEngine() { System.out.println("Мотоцикл заглушен."); }
+
     @Override
-    public void showinfo() {
-        System.out.println("\nМОТОЦИКЛ ");
-        super.showinfo();
-        String t =hasSidecar ? "Да" : "Нет";
-        System.out.println("Коляска: " + t);
-        System.out.println();
+    public void showInfo() {
+        System.out.println("\nМОТОЦИКЛ");
+        super.showInfo();
+        System.out.println("Коляска: " + (hasSidecar ? "Да" : "Нет"));
     }
 }
